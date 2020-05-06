@@ -4,11 +4,11 @@ fn main() {
 
 fn fizzbuzz() {
     for x in 1 .. 101 {
-        match x {
-            e if e % 15 == 0 => println!("FizzBuzz"),
-            e if e % 3 == 0  => println!("Fizz"),
-            e if e % 5 == 0  => println!("Buzz"),
-            e => println!("{}", e)
+        match (x % 3, x % 5) {
+            (0, 0) => println!("FizzBuzz"),
+            (0, _) => println!("Fizz"),
+            (_, 0) => println!("Buzz"),
+            (_, _) => println!("{}", x)
         }
     }
 }
